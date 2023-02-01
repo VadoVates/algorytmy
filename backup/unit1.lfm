@@ -1,31 +1,31 @@
 object Form_Main: TForm_Main
-  Left = 896
-  Height = 340
-  Top = 203
-  Width = 478
-  Caption = 'Duuuuupa'
-  ClientHeight = 340
-  ClientWidth = 478
+  Left = -1031
+  Height = 707
+  Top = 146
+  Width = 729
+  Caption = 'Ryzyko decyzji'
+  ClientHeight = 707
+  ClientWidth = 729
   LCLVersion = '2.2.4.0'
   object Label1: TLabel
-    Left = 48
+    Left = 24
     Height = 15
     Top = 8
-    Width = 33
-    Caption = 'Liczba'
+    Width = 126
+    Caption = 'Problem do rozwiązania'
     ParentColor = False
   end
   object Edit_Liczba: TEdit
     Left = 24
     Height = 23
-    Top = 32
-    Width = 80
+    Top = 24
+    Width = 192
     TabOrder = 0
   end
   object Button_Koniec: TButton
     Left = 264
     Height = 25
-    Top = 304
+    Top = 610
     Width = 75
     Caption = 'Koniec'
     OnClick = Button_KoniecClick
@@ -34,25 +34,25 @@ object Form_Main: TForm_Main
   object Button_Oblicz: TButton
     Left = 24
     Height = 25
-    Top = 68
-    Width = 120
-    Caption = 'Oblicz kwadrat liczby'
+    Top = 48
+    Width = 80
+    Caption = 'Wprowadź'
     OnClick = Button_ObliczClick
     TabOrder = 2
   end
   object ListBox_Cyfry: TListBox
-    Left = 184
-    Height = 80
-    Top = 24
-    Width = 280
+    Left = 504
+    Height = 185
+    Top = 32
+    Width = 200
     ItemHeight = 0
     TabOrder = 3
   end
   object CheckGroup_Opcje: TCheckGroup
-    Left = 184
-    Height = 85
-    Top = 120
-    Width = 185
+    Left = 24
+    Height = 45
+    Top = 506
+    Width = 216
     AutoFill = True
     ChildSizing.LeftRightSpacing = 6
     ChildSizing.TopBottomSpacing = 6
@@ -61,13 +61,14 @@ object Form_Main: TForm_Main
     ChildSizing.ShrinkHorizontal = crsScaleChilds
     ChildSizing.ShrinkVertical = crsScaleChilds
     ChildSizing.Layout = cclLeftToRightThenTopToBottom
-    ChildSizing.ControlsPerLine = 1
-    ClientHeight = 65
-    ClientWidth = 181
+    ChildSizing.ControlsPerLine = 3
+    ClientHeight = 25
+    ClientWidth = 212
+    Columns = 3
     Items.Strings = (
-      'opcja 0'
-      'opcja 1'
-      'opcja 2'
+      '1'
+      '2'
+      '3'
     )
     OnItemClick = CheckGroup_OpcjeItemClick
     TabOrder = 4
@@ -76,44 +77,100 @@ object Form_Main: TForm_Main
     }
   end
   object Label2: TLabel
-    Left = 186
+    Left = 24
     Height = 15
-    Top = 228
-    Width = 51
-    Caption = 'Wybrano:'
+    Top = 498
+    Width = 143
+    Caption = 'Waga problemu w skali 1-6'
     ParentColor = False
   end
   object Edit_Wybrano: TEdit
-    Left = 248
+    Left = 24
     Height = 23
-    Top = 224
-    Width = 80
+    Top = 562
+    Width = 216
     TabOrder = 5
   end
   object Label_Listbox: TLabel
-    Left = 184
+    Left = 584
     Height = 15
     Top = 8
-    Width = 38
-    Caption = 'Listbox'
+    Width = 36
+    Caption = 'Wyniki'
     ParentColor = False
   end
   object Button_Lista: TButton
     Left = 24
     Height = 25
-    Top = 134
-    Width = 75
-    Caption = 'Utwórz listę'
+    Top = 440
+    Width = 80
+    Caption = 'Analizuj'
     OnClick = Button_ListaClick
     TabOrder = 6
   end
   object Button_Info: TButton
     Left = 176
     Height = 25
-    Top = 304
+    Top = 610
     Width = 75
     Caption = 'Info'
     OnClick = Button_InfoClick
     TabOrder = 7
+  end
+  object Button1: TButton
+    Left = 568
+    Height = 25
+    Top = 224
+    Width = 75
+    Caption = 'Czyść'
+    OnClick = Button1Click
+    TabOrder = 8
+  end
+  object Edit_za: TEdit
+    Left = 24
+    Height = 23
+    Top = 112
+    Width = 192
+    TabOrder = 9
+  end
+  object Button_za: TButton
+    Left = 24
+    Height = 25
+    Top = 136
+    Width = 80
+    Caption = 'Wprowadź'
+    OnClick = Button_zaClick
+    TabOrder = 10
+  end
+  object Label_za: TLabel
+    Left = 24
+    Height = 15
+    Top = 96
+    Width = 68
+    Caption = 'Argument za'
+    ParentColor = False
+  end
+  object Label_przeciw: TLabel
+    Left = 24
+    Height = 15
+    Top = 184
+    Width = 97
+    Caption = 'Argument przeciw'
+    ParentColor = False
+  end
+  object Edit_przeciw: TEdit
+    Left = 24
+    Height = 23
+    Top = 200
+    Width = 192
+    TabOrder = 11
+  end
+  object Button_przeciw: TButton
+    Left = 24
+    Height = 25
+    Top = 224
+    Width = 80
+    Caption = 'Wprowadź'
+    TabOrder = 12
   end
 end
