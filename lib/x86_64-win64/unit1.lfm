@@ -1,11 +1,11 @@
 object Form_Main: TForm_Main
-  Left = 973
+  Left = 896
   Height = 340
-  Top = 498
-  Width = 577
+  Top = 203
+  Width = 478
   Caption = 'Duuuuupa'
   ClientHeight = 340
-  ClientWidth = 577
+  ClientWidth = 478
   LCLVersion = '2.2.4.0'
   object Label1: TLabel
     Left = 48
@@ -41,17 +41,17 @@ object Form_Main: TForm_Main
     TabOrder = 2
   end
   object ListBox_Cyfry: TListBox
-    Left = 24
+    Left = 184
     Height = 80
-    Top = 112
+    Top = 24
     Width = 280
     ItemHeight = 0
     TabOrder = 3
   end
   object CheckGroup_Opcje: TCheckGroup
-    Left = 352
+    Left = 184
     Height = 85
-    Top = 8
+    Top = 120
     Width = 185
     AutoFill = True
     ChildSizing.LeftRightSpacing = 6
@@ -76,18 +76,44 @@ object Form_Main: TForm_Main
     }
   end
   object Label2: TLabel
-    Left = 354
+    Left = 186
     Height = 15
-    Top = 116
+    Top = 228
     Width = 51
     Caption = 'Wybrano:'
     ParentColor = False
   end
   object Edit_Wybrano: TEdit
-    Left = 416
+    Left = 248
     Height = 23
-    Top = 112
+    Top = 224
     Width = 80
     TabOrder = 5
+  end
+  object Label_Listbox: TLabel
+    Left = 184
+    Height = 15
+    Top = 8
+    Width = 38
+    Caption = 'Listbox'
+    ParentColor = False
+  end
+  object Button_Lista: TButton
+    Left = 24
+    Height = 25
+    Top = 134
+    Width = 75
+    Caption = 'Utwórz listę'
+    OnClick = Button_ListaClick
+    TabOrder = 6
+  end
+  object Button_Info: TButton
+    Left = 176
+    Height = 25
+    Top = 304
+    Width = 75
+    Caption = 'Info'
+    OnClick = Button_InfoClick
+    TabOrder = 7
   end
 end
