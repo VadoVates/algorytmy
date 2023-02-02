@@ -35,13 +35,15 @@ type
     procedure Button_KoniecClick(Sender: TObject);
     procedure Button_ListaClick(Sender: TObject);
     procedure Button_ObliczClick(Sender: TObject);
+    procedure Button_przeciwClick(Sender: TObject);
     procedure Button_zaClick(Sender: TObject);
     procedure CheckGroup_OpcjeItemClick(Sender: TObject; Index: integer);
   private
     decyzja : string;
     liczba : real;
-    function KwadratLiczby : real;
-
+    i: integer;
+    waga : integer;
+    //function KwadratLiczby : real;
   public
 
   end;
@@ -74,22 +76,20 @@ begin
 end;
 
 procedure TForm_Main.Button_ListaClick(Sender: TObject);
-const cCyfry : array [1..5] of string = ('jeden', 'dwa', 'trzy', 'cztery', 'pięć');
-var
-  i : integer;
 begin
   ListBox_Cyfry.Clear;
-
-  for i:=1 to 5 do
-      ListBox_Cyfry.Items.Add(IntToStr(i)+' - '+cCyfry[i]);
-  ListBox_Cyfry.Items.Add('Koniec listy');
-
+  ListBox_Cyfry.Items.Add ('Magiczna kula mówi:');
+  if (waga>=0) then
+     ListBox_Cyfry.Items.Add ('TAK')
+  else
+     ListBox_Cyfry.Items.Add ('NIE');
+  waga:=0;
 end;
 
 procedure TForm_Main.Button_ObliczClick(Sender: TObject);
 var
   komunikat : string;
-  liczba2   : real;
+  //liczba2   : real;
 begin
   try
     decyzja:=Edit_Liczba.Text;
@@ -99,46 +99,66 @@ begin
     Exit;
   end;
   Listbox_Cyfry.Clear;
+  Edit_Liczba.Clear;
   Listbox_Cyfry.Items.Add('Problem: ' + decyzja);
 
 end;
 
-procedure TForm_Main.Button_zaClick(Sender: TObject);
+procedure TForm_Main.Button_przeciwClick(Sender: TObject);
 var
   komunikat : string;
-  s : string;
+
 begin
-  s:='';
-  if (ListBox_Cyfry.Items=s) then
+  if (ListBox_Cyfry.Items.Text='') then
   begin
     komunikat:='Najpierw dodaj problem do rozwiązania';
     Application.MessageBox(Pchar(komunikat),'Błąd',MB_OK);
   end
   else
   begin
-    Listbox_Cyfry.Items.Add(Edit_za.Text);
+    Listbox_Cyfry.Items.Add('Przeciw: ' + Edit_przeciw.Text + ' //waga ' + IntToStr(i));
+    Edit_przeciw.Text:='';
+    waga := waga - i;
+  end;
+end;
+
+procedure TForm_Main.Button_zaClick(Sender: TObject);
+var
+  komunikat : string;
+  //s : string;
+begin
+  //s:='';
+  if (ListBox_Cyfry.Items.Text='') then
+  begin
+    komunikat:='Najpierw dodaj problem do rozwiązania';
+    Application.MessageBox(Pchar(komunikat),'Błąd',MB_OK);
+  end
+  else
+  begin
+    Listbox_Cyfry.Items.Add('Za: ' + Edit_za.Text + ' //waga ' + IntToStr(i));
+    waga := waga + i;
     Edit_za.Text:='';
   end;
 end;
 
 procedure TForm_Main.CheckGroup_OpcjeItemClick(Sender: TObject; Index: integer);
 var
-  i : integer;
   s : string;
 begin
   s:='';
   i:=0;
+  waga:=0;
   if CheckGroup_Opcje.Checked[0] then i:=i+1;
   if CheckGroup_Opcje.Checked[1] then i:=i+2;
   if CheckGroup_Opcje.Checked[2] then i:=i+3;
   s:=IntToStr(i);
   Edit_Wybrano.Text:='Waga problemu: '+ s;
 end;
-
+{
 function TForm_Main.KwadratLiczby : real;
 begin
   KwadratLiczby:=liczba*liczba;
 end;
-
+}
 end.
 
