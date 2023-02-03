@@ -1,7 +1,7 @@
 object Form_Main: TForm_Main
-  Left = -927
+  Left = 79
   Height = 411
-  Top = 137
+  Top = 127
   Width = 497
   Caption = 'Ryzyko decyzji'
   ClientHeight = 411

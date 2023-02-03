@@ -1,11 +1,11 @@
 object Form_Main: TForm_Main
-  Left = -927
+  Left = 245
   Height = 411
-  Top = 137
-  Width = 497
+  Top = 130
+  Width = 660
   Caption = 'Ryzyko decyzji'
   ClientHeight = 411
-  ClientWidth = 497
+  ClientWidth = 660
   LCLVersion = '2.2.4.0'
   object Label1: TLabel
     Left = 24
@@ -44,7 +44,7 @@ object Form_Main: TForm_Main
     Left = 272
     Height = 185
     Top = 32
-    Width = 205
+    Width = 360
     ItemHeight = 0
     TabOrder = 3
   end
@@ -92,7 +92,7 @@ object Form_Main: TForm_Main
     TabOrder = 5
   end
   object Label_Listbox: TLabel
-    Left = 352
+    Left = 440
     Height = 15
     Top = 8
     Width = 36
@@ -100,7 +100,7 @@ object Form_Main: TForm_Main
     ParentColor = False
   end
   object Button_Lista: TButton
-    Left = 280
+    Left = 288
     Height = 25
     Top = 224
     Width = 80
@@ -118,7 +118,7 @@ object Form_Main: TForm_Main
     TabOrder = 7
   end
   object Button1: TButton
-    Left = 384
+    Left = 536
     Height = 25
     Top = 224
     Width = 83

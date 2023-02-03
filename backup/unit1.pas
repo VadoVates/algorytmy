@@ -80,10 +80,16 @@ begin
   ListBox_Cyfry.Clear;
   ListBox_Cyfry.Items.Add ('Magiczna kula mówi:');
   if (waga>=0) then
-     ListBox_Cyfry.Items.Add ('TAK')
+  begin
+     ListBox_Cyfry.Items.Add ('TAK');
+     waga:=0;
+  end
   else
-     ListBox_Cyfry.Items.Add ('NIE');
-  waga:=0;
+  begin
+    waga:=0;
+    ListBox_Cyfry.Items.Add ('NIE');
+  end;
+
 end;
 
 procedure TForm_Main.Button_ObliczClick(Sender: TObject);
